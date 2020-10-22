@@ -6,9 +6,8 @@ RUN echo "Set disable_coredump false" > /etc/sudo.conf && \
     apt-get update && \
     apt-get install -y sudo apt-utils && \
     apt-get install -y make build-essential rsync mlocate vim && \
-    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-
-RUN bash -c 'pip3 install --user pyserial'
+    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
+    pip3 install --user pyserial
 
 COPY ./ $PX4_HOME/
 
