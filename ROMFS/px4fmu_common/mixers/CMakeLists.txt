@@ -65,6 +65,8 @@ px4_add_romfs_files(
 	pass.aux.mix
 	phantom.main.mix
 	quad_dc.main.mix
+    quad_flex21.main.mix
+    quad_flex21_inv.main.mix
 	quad_h.main.mix
 	quad_+.main.mix
 	quad_s250aq.main.mix
