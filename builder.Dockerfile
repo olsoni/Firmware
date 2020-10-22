@@ -10,6 +10,8 @@ RUN echo "Set disable_coredump false" > /etc/sudo.conf && \
 
 COPY ./ $PX4_HOME/
 
+RUN bash -c 'cd $PX4_HOME && git submodule absorbgitdirs'
+
 RUN bash -c 'cd $PX4_HOME && make px4_fmu-v3_default'
 
 CMD bash -c 'cd $PX4_HOME && make px4_fmu-v3_default upload'
