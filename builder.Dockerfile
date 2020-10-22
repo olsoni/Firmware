@@ -14,4 +14,6 @@ RUN bash -c 'cd $PX4_HOME && git submodule absorbgitdirs'
 
 RUN bash -c 'cd $PX4_HOME && make px4_fmu-v3_default'
 
+RUN bash -c 'pip3 install --user pyserial'
+
 CMD bash -c 'cd $PX4_HOME && make px4_fmu-v3_default upload'
