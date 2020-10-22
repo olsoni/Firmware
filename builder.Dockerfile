@@ -8,12 +8,12 @@ RUN echo "Set disable_coredump false" > /etc/sudo.conf && \
     apt-get install -y make build-essential rsync mlocate vim && \
     ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
+RUN bash -c 'pip3 install --user pyserial'
+
 COPY ./ $PX4_HOME/
 
 RUN bash -c 'cd $PX4_HOME && git submodule absorbgitdirs'
 
 RUN bash -c 'cd $PX4_HOME && make px4_fmu-v3_default'
-
-RUN bash -c 'pip3 install --user pyserial'
 
 CMD bash -c 'cd $PX4_HOME && make px4_fmu-v3_default upload'
